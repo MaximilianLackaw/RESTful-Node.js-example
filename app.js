@@ -5,7 +5,12 @@ const mongoose   = require('mongoose');
 const Book       = require('./models/bookModel');
 const bodyParser = require('body-parser');
 
-const db = mongoose.connect('mongodb://mint-vm:27017/bookAPI');
+let db;
+if (process.env.ENV === 'Test') {
+  db = mongoose.connect('mongodb://mint-vm:27017/bookAPI_test');
+} else {
+  db = mongoose.connect('mongodb://mint-vm:27017/bookAPI');
+}
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -24,3 +29,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log('Running on port ' + port);
 });
+
+module.exports = app;

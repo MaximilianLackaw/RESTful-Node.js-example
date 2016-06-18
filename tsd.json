@@ -18,10 +18,34 @@
       "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
     },
     "node/node.d.ts": {
-      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+      "commit": "0f5d541ed332eb6165e1d6488a900c1bac0c3da8"
     },
     "body-parser/body-parser.d.ts": {
       "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "should/should.d.ts": {
+      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "orchestrator/orchestrator.d.ts": {
+      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "q/Q.d.ts": {
+      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "gulp-mocha/gulp-mocha.d.ts": {
+      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "0f5d541ed332eb6165e1d6488a900c1bac0c3da8"
     }
   }
 }

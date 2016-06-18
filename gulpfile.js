@@ -1,5 +1,6 @@
-const gulp        = require('gulp');
-const $           = require('gulp-load-plugins')({ lazy: true });
+const gulp      = require('gulp');
+const $         = require('gulp-load-plugins')({ lazy: true });
+const supertest = require('supertest');
 
 gulp.task('serve', () => {
   $.nodemon({
@@ -21,6 +22,19 @@ gulp.task('check-js-styles', () => {
     .pipe($.jscs.reporter())
     .pipe($.jscs.reporter('fail'))
     .pipe(gulp.dest('.'));
+});
+
+gulp.task('test', () => {
+  $.env({ vars: { ENV: 'Test' } });
+
+  return gulp.src('tests/*.js', { read: false })
+    .pipe($.mocha({ reporter: 'nyan' }))
+    .once('error', () => {
+      process.exit(1);
+    })
+    .once('end', () => {
+      process.exit();
+    });
 });
 
 gulp.task('default', ['check-js-styles', 'serve']);
