@@ -1,0 +1,22 @@
+{
+  "preset": "airbnb",
+  "requireTrailingComma": null,
+  "requireArrowFunctions": true,
+  "requireParenthesesAroundArrowParam": true,
+  "disallowDanglingUnderscores": true,
+  "disallowNewlineBeforeBlockStatements": true,
+  "disallowTrailingComma": true,
+  "maxErrors" : null,
+  "disallowSpacesInFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowUnusedParams": true,
+  "disallowTrailingWhitespace": true,
+  "disallowVar": true,
+  "requireLineFeedAtFileEnd": true,
+  "requireShorthandArrowFunctions": false,
+  "validateLineBreaks": null
+}

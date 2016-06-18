@@ -1,0 +1,11 @@
+.git/*
+node_modules/*
+typings/
+tsd.json
+.dockerignore
+.editorconfig
+.gitignore
+Dockerfile
+README.md
+LICENSE
+jsconfig.json

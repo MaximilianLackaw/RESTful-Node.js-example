@@ -1,0 +1,36 @@
+{
+  "name": "restful-node.js-example",
+  "version": "0.1.0",
+  "description": "A simple example of a node.js express service with db access",
+  "keywords": [
+    "Node.js",
+    "express",
+    "REST",
+    "JavaScript",
+    "MongoDB"
+  ],
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": {
+    "name": "Maximilian Lackaw",
+    "email": "mlackaw@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaximilianLackaw/RESTful-Node.js-example"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.20"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jscs": "^3.0.2",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-util": "^3.0.7"
+  }
+}
