@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 const bookRouter = require('./routes/bookRoutes')(Book);
 
-app.use('/api/', bookRouter);
+app.use('/api/Books', bookRouter);
 
 app.get('/', (req, res) => {
   res.send('welcome to the simple node express service');
