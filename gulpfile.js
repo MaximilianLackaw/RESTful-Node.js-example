@@ -1,7 +1,7 @@
 const gulp        = require('gulp');
 const $           = require('gulp-load-plugins')({ lazy: true });
 
-gulp.task('serve', ['check-js-styles'], () => {
+gulp.task('serve', () => {
   $.nodemon({
     script: 'app.js',
     ext: 'js',
@@ -23,7 +23,7 @@ gulp.task('check-js-styles', () => {
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['check-js-styles', 'serve']);
 
 function log(msg) {
   if (typeof (msg) === 'object') {

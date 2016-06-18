@@ -50,8 +50,29 @@ const routes = (Book) => {
       req.book.author = req.body.author;
       req.book.genre  = req.body.genre;
       req.book.read   = req.body.read;
-      req.book.save();
-      res.json(req.book);
+      req.book.save((error) => {
+        if (error) {
+          res.status(500).send(error);
+        } else {
+          res.json(req.book);
+        }
+      });
+    })
+    .patch((req, res) => {
+      if (req.body._id) {
+        delete req.body._id;
+      }
+      for (let p in req.body) {
+        req.book[p] = req.body[p];
+      }
+
+      req.book.save((error) => {
+        if (error) {
+          res.status(500).send(error);
+        } else {
+          res.json(req.book);
+        }
+      });
     });
 
   return bookRouter;

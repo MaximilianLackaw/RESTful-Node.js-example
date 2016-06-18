@@ -3,7 +3,7 @@
   "requireTrailingComma": null,
   "requireArrowFunctions": true,
   "requireParenthesesAroundArrowParam": true,
-  "disallowDanglingUnderscores": true,
+  "disallowDanglingUnderscores": { "allExcept": ["_id"] },
   "disallowNewlineBeforeBlockStatements": true,
   "disallowTrailingComma": true,
   "maxErrors" : null,
