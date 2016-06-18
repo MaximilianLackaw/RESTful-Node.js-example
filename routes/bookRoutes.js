@@ -62,6 +62,7 @@ const routes = (Book) => {
       if (req.body._id) {
         delete req.body._id;
       }
+
       for (let p in req.body) {
         req.book[p] = req.body[p];
       }
@@ -71,6 +72,15 @@ const routes = (Book) => {
           res.status(500).send(error);
         } else {
           res.json(req.book);
+        }
+      });
+    })
+    .delete((req, res) => {
+      req.book.remove((error) => {
+        if (error) {
+          res.status(500).send(err);
+        } else {
+          res.status(204).send('Removed');
         }
       });
     });
