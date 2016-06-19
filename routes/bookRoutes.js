@@ -1,13 +1,15 @@
 'use strict';
 
 const express = require('express');
+const BookController = require('../controllers/bookController.js');
+
 
 const routes = (Book) => {
   const bookRouter = express.Router();
-  const bookController = require('../controllers/bookController.js')(Book);
+  const controller = new BookController(Book);
   bookRouter.route('/')
-    .post(bookController.post)
-    .get(bookController.get);
+    .post(controller.post)
+    .get((req, res) => controller.get(req, res));
 
   bookRouter.use('/:bookId', (req, res, next) => {
     Book.findById(req.params.bookId, (err, book) => {

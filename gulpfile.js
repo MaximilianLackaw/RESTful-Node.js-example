@@ -29,10 +29,12 @@ gulp.task('test', () => {
 
   return gulp.src('tests/*.js', { read: false })
     .pipe($.mocha({ reporter: 'nyan' }))
-    .once('error', () => {
+    .once('error', (err) => {
+      log(err);
       process.exit(1);
     })
     .once('end', () => {
+      log('end');
       process.exit();
     });
 });

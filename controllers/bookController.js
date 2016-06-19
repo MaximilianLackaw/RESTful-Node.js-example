@@ -1,8 +1,12 @@
 'use strict';
 
-const bookController = (Book) => {
-  const post = (req, res) => {
-    const book = new Book(req.body);
+class BookController {
+  constructor(Book) {
+    this.Book = Book;
+  }
+
+  post(req, res) {
+    const book = new this.Book(req.body);
 
     if (!req.body.title) {
       res.status(400);
@@ -13,14 +17,14 @@ const bookController = (Book) => {
     }
   };
 
-  const get = (req, res) => {
+  get(req, res) {
     const query = {};
 
     if (req.query.genre) {
       query.genre = req.query.genre;
     }
 
-    Book.find(query, (err, books) => {
+    this.Book.find(query, (err, books) => {
       if (err) {
         res.status(500).send(err);
       } else {
@@ -28,11 +32,6 @@ const bookController = (Book) => {
       }
     });
   };
+}
 
-  return {
-    post: post,
-    get: get
-  };
-};
-
-module.exports = bookController;
+module.exports = BookController;

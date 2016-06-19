@@ -2,10 +2,12 @@
 
 const should = require('should');
 const sinon  = require('sinon');
+const BookController = require('../controllers/bookController');
 
 describe('Book Controller Tests', () => {
   describe('Post', () => {
     it('should not allow an empty title on post', () => {
+
       const Book = function(book) {
         this.book = book; //to make jscs happy
         this.save = () => {};
@@ -22,7 +24,7 @@ describe('Book Controller Tests', () => {
         send: sinon.spy()
       };
 
-      const bookController = require('../controllers/bookController')(Book);
+      let bookController = new BookController(Book);
 
       bookController.post(req, res);
 
