@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 const bookController = (Book) => {
   const post = (req, res) => {
